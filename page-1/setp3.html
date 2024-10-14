@@ -3214,22 +3214,23 @@ display: block;
             });
 
 
-            // $('#form1 :button').removeAttr('disabled').val('完成并提交');
-            // $('#form1 :button').click(function () {
-            //     var formdata = $('#form1').serializeArray();
-            //     $.post('/zhaoshang/add.aspx', formdata, function (json) {
-            //         json = $.parseJSON(json);
-            //         if (json.error) {
-            //             //$.prompt(json.msg, { show: 'slideDown' });
-            //             alert(json.msg);
-            //         }
-            //         else {
-            //             //$.prompt('发布成功', { show: 'slideDown' });
-            //             alert('发布成功');
-            //         }
-            //         $('#form1 :button').removeAttr('disabled').html('完成并提交');
-            //     });
-            // });
+            $('#form1 :button').removeAttr('disabled').val('完成并提交');
+            $('#form1 :button').click(function () {
+              alert('发布成功');
+                // var formdata = $('#form1').serializeArray();
+                // $.post('/zhaoshang/add.aspx', formdata, function (json) {
+                //     json = $.parseJSON(json);
+                //     if (json.error) {
+                //         //$.prompt(json.msg, { show: 'slideDown' });
+                //         alert(json.msg);
+                //     }
+                //     else {
+                //         //$.prompt('发布成功', { show: 'slideDown' });
+                //         alert('发布成功');
+                //     }
+                //     $('#form1 :button').removeAttr('disabled').html('完成并提交');
+                // });
+            });
         })
     </script>
 
