@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+  <div class="formBox">
+    <form class="form">
+      <div class="form-group">
+        <p>您的姓名</p>
+        <input type="text" class="form-control" name="t_name" placeholder="请输入您的姓名"></div>
+      <div class="form-group">
+        <p>您的电话</p>
+        <div class="phoneBox">
+          <input type="text" class="form-control" name="phoneNumber" placeholder="请输入您的电话">
+          <button type="button" id="yzmBtn" class="btn">发送验证码</button>
+        </div>
+      </div>
+      <div class="form-group phoneBoxGroup">
+        <p>验证码</p>
+        <input type="text" class="form-control" name="t_code" placeholder="请输入验证码">
+      </div>
+      <div class="checkLine">
+        <input class="checkBox" type="checkbox" name="checkbox_name" value="1">
+        <span class="footerInfo">允许推荐给更多优质商家为您提供服务 </span>
+      </div>
+      <p class="footerSubmitText">点击'提交'即表示您同意我们的<a href="#" style="color: #409EFF;">隐私政策</a></p>
+      <div class="form-group">
+        <button type="button" id="submit" class="submitBtn">提交</button>
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+$("#yzmBtn").click(function(){
+  let count = 60
+  $(this).addClass('btn-default')
+  $(this).text('60s后重新发送')
+  let interval = setInterval(() => {
+    if(count === 0) {
+      clearInterval(interval)
+      $(this).removeClass('btn-default')
+      $(this).text('发送验证码')
+    } else {
+      count--
+      $(this).text(count + 's后重新发送')
+    }
+  }, 1000)
+})
+
+$("#submit").click(function() {
+  alert('提交成功')
+})
+</script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.4rem;
+}
+.formBox {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,.5);
+  padding: 20px;
+  position: absolute;
+}
+.form {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 25px 10px;
+  font-size: 1.2rem;
+  color: #606266;
+  font-weight: 500;
+  font-family: arial,'Microsoft Yahei';
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form-group {
+  height: 4rem;
+  margin-bottom: 10%;
+}
+.phoneBoxGroup {
+  margin-bottom: 7%;
+}
+.form-group:nth-last-child(1) {
+  margin-bottom: 0;
+}
+.phoneBox {
+  display: flex;
+  justify-content: flex-start;
+}
+.checkLine {
+  display: flex;
+  justify-content: flex-start;
+}
+.checkBox {
+  padding: unset;
+  font-size: unset;
+  width: 1rem;
+  margin-right: .5rem;
+}
+.btn {
+  width: 15rem;
+  font-size: 1.2rem;
+  margin-left: 5px;
+  border-radius: 6px;
+  border: none;
+  background: rgb(237, 154, 47);
+  color: #FFFFFF;
+  font-weight: 500;
+}
+.submitBtn {
+  text-align: center;
+  width: 100%;
+  height: 3rem;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  border: none;
+  background: rgb(237, 154, 47);
+  color: #FFFFFF;
+  font-weight: 500;
+}
+.btn-default {
+  pointer-events: none;
+  background: #E6E8EB;
+  color: #606266;
+}
+p {
+  margin-bottom: .5rem;
+}
+input {
+  padding: 3% 5%;
+  box-sizing: border-box;
+  background: #efeff0;
+  border: 0;
+  border-radius: 5px;
+  color: #aab2bd;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.footerInfo {
+  color: #303133;
+}
+.footerSubmitText {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 7%;
+}
+</style>
+</html>
