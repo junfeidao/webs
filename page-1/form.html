@@ -14,14 +14,7 @@
         <input type="text" class="form-control" name="t_name" placeholder="请输入您的姓名"></div>
       <div class="form-group">
         <p>您的电话</p>
-        <div class="phoneBox">
-          <input type="text" class="form-control" name="phoneNumber" placeholder="请输入您的电话">
-          <button type="button" id="yzmBtn" class="btn">发送验证码</button>
-        </div>
-      </div>
-      <div class="form-group phoneBoxGroup">
-        <p>验证码</p>
-        <input type="text" class="form-control" name="t_code" placeholder="请输入验证码">
+        <input type="text" class="form-control" name="phoneNumber" placeholder="请输入您的电话">
       </div>
       <div class="checkLine">
         <input class="checkBox" type="checkbox" name="checkbox_name" value="1">
@@ -35,24 +28,9 @@
   </div>
 </body>
 <script>
-$("#yzmBtn").click(function(){
-  let count = 60
-  $(this).addClass('btn-default')
-  $(this).text('60s后重新发送')
-  let interval = setInterval(() => {
-    if(count === 0) {
-      clearInterval(interval)
-      $(this).removeClass('btn-default')
-      $(this).text('发送验证码')
-    } else {
-      count--
-      $(this).text(count + 's后重新发送')
-    }
-  }, 1000)
-})
-
 $("#submit").click(function() {
   alert('提交成功')
+  window.location.href = 'https://reachminds.top/page-1/index.html'
 })
 </script>
 <style>
@@ -90,15 +68,8 @@ p {
   height: 4rem;
   margin-bottom: 10%;
 }
-.phoneBoxGroup {
-  margin-bottom: 7%;
-}
 .form-group:nth-last-child(1) {
   margin-bottom: 0;
-}
-.phoneBox {
-  display: flex;
-  justify-content: flex-start;
 }
 .checkLine {
   display: flex;
